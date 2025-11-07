@@ -1,0 +1,21 @@
+Data preprocessing steps:
+- Dropped duplicate records and standardised column formats.
+- Imputed missing academic years with 'Unknown' and engineered buckets for birth year, registration period, and success rate.
+
+Apriori before clustering:
+- Evaluated 114239 transactions across 78 item indicators.
+- Discovered 30 rules with minimum support 0.05 and confidence 0.6.
+
+K-Means clustering:
+- Assessed k values 2-8; selected k=6 with best silhouette score 0.168.
+- Saved cluster assignments with aggregated pass-rate and success-rate statistics.
+
+Apriori after clustering:
+- Generated 100 cluster-specific rules using adaptive support >= 0.020.
+- Stored combined results in apriori_rules_after_clusters.csv for comparison.
+
+Key recommendations based on clusters:
+- التركيز على دعم الطلاب في العنقود 1 حيث لا تتجاوز نسبة النجاح 0.0%. أكثر المدن تمثيلاً: غريان.
+- دراسة ممارسات العنقود 2 (نسبة نجاح 100.0%) مع التركيز على تخصص Data analysis لنقل الخبرات إلى بقية العناقيد.
+- دراسة ممارسات العنقود 3 (نسبة نجاح 100.0%) مع التركيز على تخصص Accounting لنقل الخبرات إلى بقية العناقيد.
+- مراقبة الطلاب المسجلين بعد 2015 حيث تصل نسبة الرسوب ضمنهم إلى 21.3%.
